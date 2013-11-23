@@ -17,3 +17,5 @@ Its all going to take place in a simplistic enviroment with low-poly models
 and simplistic, mostly gray/white textures with perhaps a little noise.
 
 Other mechanics might be added. Not much have really been planned.
+
+LOOK! I can do ze edit!
