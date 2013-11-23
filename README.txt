@@ -1,4 +1,4 @@
-Fatuiqe
+fatigue
 =======
 
 A game about fleeing and running
