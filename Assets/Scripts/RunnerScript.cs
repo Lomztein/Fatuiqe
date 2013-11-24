@@ -43,6 +43,7 @@ public class RunnerScript : MonoBehaviour {
 			batteryPower -= batteryDrain * Time.deltaTime;
 		}else{
 			torch.light.intensity = 0;
+			batteryPower += batteryDrain * 2 * Time.deltaTime;
 		}
 	}
 }
