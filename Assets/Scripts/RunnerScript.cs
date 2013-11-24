@@ -8,6 +8,7 @@ public class RunnerScript : MonoBehaviour {
 	public GameObject torch;
 	float maxBatteryPower = 100;
 	public float batteryPower = 100;
+	public int lightSticks;
 
 	void OnGUI () {
 		GUI.Box (new Rect(10, Screen.height - 30, (Screen.width/(maxBatteryPower/batteryPower)) - 20, 20),"Battery charge " + Mathf.Round(batteryPower) + "%");
@@ -43,7 +44,7 @@ public class RunnerScript : MonoBehaviour {
 			batteryPower -= batteryDrain * Time.deltaTime;
 		}else{
 			torch.light.intensity = 0;
-			batteryPower += batteryDrain * 2 * Time.deltaTime;
+			batteryPower += batteryDrain * 0.25f * Time.deltaTime;
 		}
 	}
 }

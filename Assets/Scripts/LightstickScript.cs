@@ -5,6 +5,7 @@ public class LightstickScript : MonoBehaviour {
 	
 	public int time;
 	public float fadeRate;
+	float aliveTime = 120;
 
 	// Use this for initialization
 	void Start () {
@@ -16,4 +17,11 @@ public class LightstickScript : MonoBehaviour {
 	void Destroy () {
 		Destroy (gameObject);
 	}
+/*	void OnTriggerEnter (Collider col) {
+		if (aliveTime < 0) {
+			if (col.gameObject.name == "Runner") {
+				col.gameObject.GetComponent<RunnerScript>().lightSticks ++;
+			}
+		}
+	}*/
 }
