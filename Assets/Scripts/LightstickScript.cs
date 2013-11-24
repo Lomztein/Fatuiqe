@@ -2,19 +2,18 @@
 using System.Collections;
 
 public class LightstickScript : MonoBehaviour {
+	
+	public int time;
+	public float fadeRate;
 
 	// Use this for initialization
 	void Start () {
-		Invoke ("Burnout",30);
+		Invoke ("Destroy",time);
 	}
-	
-	// Update is called once per frame
-	void Burnout () {
-		Destroy (light);
-		Invoke ("Die",60);
+	void Update () {
+		light.intensity -= fadeRate * Time.deltaTime;
 	}
-
-	void Die () {
+	void Destroy () {
 		Destroy (gameObject);
 	}
 }
