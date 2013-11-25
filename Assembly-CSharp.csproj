@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\LightstickScript.cs" />
      <Compile Include="Assets\Scripts\RunnerScript.cs" />
      <Compile Include="Assets\Scripts\ShootingScript.cs" />
+     <Compile Include="Assets\Scripts\Stats.cs" />
      <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
   </ItemGroup>
   <ItemGroup>
