@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{164C93D2-A9CC-5237-7449-8A6DBB4E1683}") = "Fatuiqe", "Assembly-CSharp.csproj", "{B39FD3ED-766A-8F83-B5FB-C4740E07BAAE}"
 EndProject
-Project("{164C93D2-A9CC-5237-7449-8A6DBB4E1683}") = "Fatuiqe", "Assembly-UnityScript-firstpass.unityproj", "{B7E6A9D7-0438-3DE5-ED89-5614ACC9C58A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,15 +13,11 @@ Global
 		{B39FD3ED-766A-8F83-B5FB-C4740E07BAAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B39FD3ED-766A-8F83-B5FB-C4740E07BAAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B39FD3ED-766A-8F83-B5FB-C4740E07BAAE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B7E6A9D7-0438-3DE5-ED89-5614ACC9C58A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B7E6A9D7-0438-3DE5-ED89-5614ACC9C58A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B7E6A9D7-0438-3DE5-ED89-5614ACC9C58A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B7E6A9D7-0438-3DE5-ED89-5614ACC9C58A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																		GlobalSection(MonoDevelopProperties) = preSolution
+																					GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1

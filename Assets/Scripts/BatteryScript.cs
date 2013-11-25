@@ -7,7 +7,7 @@ public class BatteryScript : MonoBehaviour {
 
 	void OnTriggerEnter (Collider col) {
 		if (col.gameObject.name == "Runner") {
-			col.gameObject.GetComponent<RunnerScript>().batteryPower += charge;
+			col.gameObject.GetComponent<RunnerScript>().batteries ++;
 			Destroy(gameObject);
 		}
 	}

@@ -8,6 +8,7 @@ public class RunnerScript : MonoBehaviour {
 	public GameObject torch;
 	public GameObject hunter;
 	public float distanceToHunter;
+	public int batteries;
 	float maxBatteryPower = 100;
 	public float batteryPower = 100;
 	public int lightSticks;
@@ -28,6 +29,7 @@ public class RunnerScript : MonoBehaviour {
 	void OnGUI () {
 		GUI.Box (new Rect(10, Screen.height - 30, (Screen.width/(maxBatteryPower/batteryPower)) - 20, 20),"Battery charge " + Mathf.Round(batteryPower) + "%");
 		GUI.Label (new Rect(10,Screen.height - 50, Screen.width, 20), "Lightsticks: "+lightSticks.ToString());
+		GUI.Label (new Rect(10,Screen.height - 70, Screen.width, 20), "Batteries: "+batteries.ToString());
 	}
 
 	// Update is called once per frame
@@ -47,6 +49,14 @@ public class RunnerScript : MonoBehaviour {
 				torchEnabled = true;
 			}
 		}
+
+		if (Input.GetButtonDown ("Fire3")) {
+			if (batteries > 0) {
+				batteryPower += 10;
+				batteries --;
+			}
+		}
+
 		//Control torch
 		if (torchEnabled && batteryPower > 0) {
 			torch.light.intensity = batteryPower/100;

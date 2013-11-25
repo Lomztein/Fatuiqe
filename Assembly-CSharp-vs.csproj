@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{85A39F17-CD3D-FE64-450E-EC4E43A2A85F}</ProjectGuid>
+	<ProjectGuid>{B39FD3ED-766A-8F83-B5FB-C4740E07BAAE}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -46,6 +46,7 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\BatteryBundleScript.cs" />
      <Compile Include="Assets\Scripts\BatteryScript.cs" />
      <Compile Include="Assets\Scripts\FPSController.cs" />
      <Compile Include="Assets\Scripts\LightstickBundleScript.cs" />
@@ -54,10 +55,6 @@
      <Compile Include="Assets\Scripts\RunnerScript.cs" />
      <Compile Include="Assets\Scripts\ShootingScript.cs" />
      <Compile Include="Assets\Scripts\Stats.cs" />
-     <None Include="Assets\Standard Assets\Particles\Sources\Shaders\Particle Alpha Blend (Queue +100).shader" />
- <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>Library\ScriptAssemblies\Assembly-UnityScript-firstpass.dll</HintPath>
- </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
