@@ -18,7 +18,7 @@ public class RunnerScript : MonoBehaviour {
 
 	void Heartbeat () {
 		Debug.Log("Heartbeat!");
-		if (distanceToHunter*5 < 50f) {
+		if (distanceToHunter < 50f) {
 			Invoke("Heartbeat",Mathf.Max (distanceToHunter/25f,0.25f));
 		}else{
 			Invoke("Heartbeat",2f);
