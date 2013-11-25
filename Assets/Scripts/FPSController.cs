@@ -32,8 +32,8 @@ public class FPSController : MonoBehaviour {
 
 		//Movement
 
-		float forwardSpeed = Input.GetAxis ("Vertical") * maxSpeed;
-		float sidewaysSpeed = Input.GetAxis ("Horizontal") * maxSpeed;
+		float forwardSpeed = Input.GetAxis ("Walk") * maxSpeed;
+		float sidewaysSpeed = Input.GetAxis ("Strafe") * maxSpeed;
 
 		speedY += Physics.gravity.y * Time.deltaTime;
 

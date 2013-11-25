@@ -14,7 +14,7 @@ public class ShootingScript : MonoBehaviour {
 	}
 
 	void Update () {
-		if (Input.GetButtonDown ("Fire2") && runnerScript.lightSticks > 0) {
+		if (Input.GetButtonDown ("Throw lightstick") && runnerScript.lightSticks > 0) {
 			GameObject lastBullet = (GameObject)Instantiate(bullet,transform.position,transform.rotation);
 			lastBullet.rigidbody.AddForce (transform.forward * bulletSpeed,ForceMode.Impulse);
 			runnerScript.lightSticks --;

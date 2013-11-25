@@ -12,8 +12,10 @@ public class LightstickPickupScript : MonoBehaviour {
 
 	void OnTriggerEnter (Collider col) {
 		if (col.gameObject.name == "Runner" && aliveTime <= 0) {
-			col.gameObject.GetComponent<RunnerScript>().lightSticks += 1;
 			Destroy (gameObject);
+			if (Mathf.Round(Random.value*10) != 10) {
+				col.gameObject.GetComponent<RunnerScript>().lightSticks += 1;
+			}
 		}
 	}
 }
