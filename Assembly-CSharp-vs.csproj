@@ -48,6 +48,8 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\BatteryScript.cs" />
      <Compile Include="Assets\Scripts\FPSController.cs" />
+     <Compile Include="Assets\Scripts\LightstickBundleScript.cs" />
+     <Compile Include="Assets\Scripts\LightstickPickupScript.cs" />
      <Compile Include="Assets\Scripts\LightstickScript.cs" />
      <Compile Include="Assets\Scripts\RunnerScript.cs" />
      <Compile Include="Assets\Scripts\ShootingScript.cs" />
