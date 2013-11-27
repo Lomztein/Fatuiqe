@@ -10,16 +10,18 @@ public class RunnerScript : MonoBehaviour {
 	public GameObject hunter;
 	public float distanceToHunter;
 	public int batteries;
+	public AudioClip heatbeatSound;
 	float maxBatteryPower = 100;
 	public float batteryPower = 100;
 	public int lightSticks;
+	public float maxLightIntensity;
 
 	void Awake () {
 		Invoke("Heartbeat",1f);
 	}
 
 	void Heartbeat () {
-		Debug.Log("Heartbeat!");
+		audio.PlayOneShot(heatbeatSound);
 		if (distanceToHunter < 50f) {
 			Invoke("Heartbeat",Mathf.Max (distanceToHunter/25f,0.25f));
 		}else{
@@ -42,6 +44,11 @@ public class RunnerScript : MonoBehaviour {
 			batteryPower = 100;
 		}
 
+		if (batteryPower <= 0) {
+			torchEnabled = false;
+			batteryPower = 0;
+		}
+
 		//Toggle torch
 		if (Input.GetButtonDown ("Toggle torch")) {
 			if (torchEnabled) {
@@ -60,13 +67,17 @@ public class RunnerScript : MonoBehaviour {
 
 		//Control torch
 		if (torchEnabled && batteryPower > 0) {
-			torch.light.intensity = batteryPower/100;
-			wideLight.light.intensity = Mathf.Max ((batteryPower/250)-0.5f,0);
+			torch.light.intensity = maxLightIntensity*(batteryPower/100);
 			batteryPower -= batteryDrain * Time.deltaTime;
+			if (wideLight != null) {
+				wideLight.light.intensity = Mathf.Max ((maxLightIntensity*(batteryPower/250))-0.5f,0);
+			}
 		}else{
 			torch.light.intensity = 0;
-			wideLight.light.intensity = 0;
 			batteryPower += batteryDrain * 0.125f * Time.deltaTime;
+			if (wideLight != null) {
+				wideLight.light.intensity = 0;
+			}
 		}
 	}
 }
