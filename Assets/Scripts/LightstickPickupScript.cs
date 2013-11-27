@@ -5,7 +5,6 @@ public class LightstickPickupScript : MonoBehaviour {
 
 	float aliveTime = 1;
 
-	// Use this for initialization
 	void Update () {
 		aliveTime -= 1 * Time.deltaTime;
 	}
@@ -13,7 +12,7 @@ public class LightstickPickupScript : MonoBehaviour {
 	void OnTriggerEnter (Collider col) {
 		if (col.gameObject.name == "Runner" && aliveTime <= 0) {
 			Destroy (gameObject);
-			if (Mathf.Round(Random.value*3) != 1) {
+			if (Mathf.Round(Random.value*10) != 1) {
 				col.gameObject.GetComponent<RunnerScript>().lightSticks += 1;
 			}
 		}

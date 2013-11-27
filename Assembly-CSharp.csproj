@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{B39FD3ED-766A-8F83-B5FB-C4740E07BAAE}</ProjectGuid>
+	<ProjectGuid>{85A39F17-CD3D-FE64-450E-EC4E43A2A85F}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\LightstickBundleScript.cs" />
      <Compile Include="Assets\Scripts\LightstickPickupScript.cs" />
      <Compile Include="Assets\Scripts\LightstickScript.cs" />
+     <Compile Include="Assets\Scripts\MainMenuBackgroundScript.cs" />
      <Compile Include="Assets\Scripts\RunnerScript.cs" />
      <Compile Include="Assets\Scripts\ShootingScript.cs" />
      <Compile Include="Assets\Scripts\Stats.cs" />

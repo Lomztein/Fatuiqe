@@ -5,7 +5,7 @@ public class Stats : MonoBehaviour {
 	
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Escape)) {
-			Application.Quit();
+			Application.LoadLevel("MainMenu");
 		}
 	}
 }

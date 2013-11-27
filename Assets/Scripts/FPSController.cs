@@ -3,6 +3,8 @@ using System.Collections;
 
 public class FPSController : MonoBehaviour {
 
+	public float health;
+	public float maxHealth;
 	public float maxSpeed;
 	public float sensitivity;
 	public float ViewRangeY;
@@ -16,6 +18,10 @@ public class FPSController : MonoBehaviour {
 	void Start () {
 		Screen.lockCursor = true;
 		charController = GetComponent<CharacterController>();
+	}
+
+	void OnGUI () {
+		GUI.Box (new Rect(10, Screen.height - 30, (Screen.width/(maxHealth/health)) - 20, 20),"Health");
 	}
 	
 	// Update is called once per frame
