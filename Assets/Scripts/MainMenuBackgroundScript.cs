@@ -9,6 +9,9 @@ public class MainMenuBackgroundScript : MonoBehaviour {
 	public GameObject menuLight;
 	public AudioClip lightningSound;
 	public GameObject logo;
+	public float LogoX;
+	public float LogoY;
+	public float LogoZ;
 
 	void FixedUpdate () {
 		if (Mathf.Round(Random.value*lightningChance) == 1) {
@@ -39,11 +42,12 @@ public class MainMenuBackgroundScript : MonoBehaviour {
 
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Escape)) {
-			Debug.Log ("Lol the game didn't quite");
+			Debug.Log ("Lol the game didn't quit");
 		}
 		if (menuLight.light.intensity > 0) {
 			menuLight.light.intensity -= lightningFade * Time.deltaTime;
 		}
-		logo.transform.position = new Vector3 (0,0,-0.05f);
+		float LogoOffsetY = LogoY - Screen.height;
+		logo.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(LogoX,LogoOffsetY,LogoZ));
 	}
 }
