@@ -8,10 +8,7 @@ public class MainMenuBackgroundScript : MonoBehaviour {
 	public float menuPosition;
 	public GameObject menuLight;
 	public AudioClip lightningSound;
-	public GameObject logo;
-	public float LogoX;
-	public float LogoY;
-	public float LogoZ;
+	public Texture logo;
 
 	void FixedUpdate () {
 		if (Mathf.Round(Random.value*lightningChance) == 1) {
@@ -27,27 +24,29 @@ public class MainMenuBackgroundScript : MonoBehaviour {
 	}
 
 	void OnGUI() {
-		if (GUI.Button(new Rect(10, menuPosition, Screen.width / 3, 30), "Level_01"))
+		GUI.DrawTexture(new Rect(5, -135, 400, 400), logo, ScaleMode.ScaleToFit, true, 0);
+		if (GUI.Button(new Rect(10, menuPosition, 135*3, 30), "Level_01"))
 			Application.LoadLevel ("Level_01");
 
-		if (GUI.Button(new Rect(10, menuPosition + 40, Screen.width / 3, 30), "Level_02"))
+		if (GUI.Button(new Rect(10, menuPosition + 40, 135*3, 30), "Level_02"))
 			Application.LoadLevel ("Level_02");
 
-		if (GUI.Button(new Rect(10, menuPosition + 80, Screen.width / 3, 30), "Level_03"))
+		if (GUI.Button(new Rect(10, menuPosition + 80, 135*3, 30), "Level_03 (DOESN'T EXISTS)"))
 			Application.LoadLevel ("Level_03");
 		
-		if (GUI.Button(new Rect(10, menuPosition + 120, Screen.width / 3, 30), "Level_04"))
+		if (GUI.Button(new Rect(10, menuPosition + 120, 135*3, 30), "Level_04 (DOESN'T EXISTS)"))
 			Application.LoadLevel ("Level_04");
+
+		if (GUI.Button(new Rect(10, menuPosition + 160, 135*3, 30), "Quit"))
+			Application.Quit ();
 	}
 
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Escape)) {
-			Debug.Log ("Lol the game didn't quit");
+			Application.Quit();
 		}
 		if (menuLight.light.intensity > 0) {
 			menuLight.light.intensity -= lightningFade * Time.deltaTime;
 		}
-		float LogoOffsetY = LogoY - Screen.height;
-		logo.transform.position = Camera.main.ScreenToWorldPoint(new Vector3(LogoX,LogoOffsetY,LogoZ));
 	}
 }

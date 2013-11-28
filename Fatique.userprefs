@@ -1,17 +1,16 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MainMenuBackgroundScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\RunnerScript.cs" Line="28" Column="19" />
-      <File FileName="Assets\Scripts\MainMenuBackgroundScript.cs" Line="49" Column="2" />
+      <File FileName="Assets\Scripts\RunnerScript.cs" Line="95" Column="7" />
+      <File FileName="Assets\Scripts\MainMenuBackgroundScript.cs" Line="40" Column="68" />
       <File FileName="Assets\Scripts\LightstickPickupScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\RunnerScript.cs" Line="28" Column="19" />
       <File FileName="Assets\Scripts\Stats.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\ShootingScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\LightstickScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\BatteryScript.cs" Line="1" Column="1" />
       <File FileName="Assets\Scripts\LightstickBundleScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\FPSController.cs" Line="24" Column="55" />
+      <File FileName="Assets\Scripts\FPSController.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -5,8 +5,6 @@ public class RunnerScript : MonoBehaviour {
 
 	public bool torchEnabled;
 	public float batteryDrain;
-	public GameObject torch;
-	public GameObject wideLight;
 	public GameObject hunter;
 	public float distanceToHunter;
 	public int batteries;
@@ -15,9 +13,26 @@ public class RunnerScript : MonoBehaviour {
 	public float batteryPower = 100;
 	public int lightSticks;
 	public float maxLightIntensity;
+	public GameObject futureEquip;
+	public Vector3 equipmentPosition;
+	public GameObject runnerCamera;
+	public GameObject currentEquip = null;
+	public float useDistance;
 
 	void Awake () {
 		Invoke("Heartbeat",1f);
+		if (futureEquip == null) {
+			Debug.Log ("No equipment detected");
+		}else{
+			SpawnEquipment ();
+		}
+	}
+
+	void SpawnEquipment () {
+		currentEquip = (GameObject)Instantiate(futureEquip,equipmentPosition,transform.rotation);
+		currentEquip.transform.parent = runnerCamera.transform;
+		currentEquip.transform.position = runnerCamera.transform.position + equipmentPosition;
+		futureEquip = null;
 	}
 
 	void Heartbeat () {
@@ -33,12 +48,23 @@ public class RunnerScript : MonoBehaviour {
 		GUI.Box (new Rect(10, 10, (Screen.width/(maxBatteryPower/batteryPower)) - 20,20),"Battery charge");
 		GUI.Label (new Rect(10,Screen.height - 50, Screen.width, 20), "Lightsticks: "+lightSticks.ToString());
 		GUI.Label (new Rect(10,Screen.height - 70, Screen.width, 20), "Batteries: "+batteries.ToString());
+		GUI.Label (new Rect(10,Screen.height - 90, Screen.width, 20), "Equipment: "+currentEquip.ToString());
 	}
 
 	// Update is called once per frame
 	void Update () {
 
-		distanceToHunter = Vector3.Distance (transform.position,hunter.transform.position);
+		if (currentEquip) {
+			currentEquip.transform.position = runnerCamera.transform.position + equipmentPosition;
+			distanceToHunter = Vector3.Distance (transform.position,hunter.transform.position);
+		}
+
+		if (futureEquip) {
+			if (currentEquip) {
+				Destroy(currentEquip.gameObject);
+			}
+			SpawnEquipment();
+		}
 
 		if (batteryPower > 100) {
 			batteryPower = 100;
@@ -65,18 +91,9 @@ public class RunnerScript : MonoBehaviour {
 			}
 		}
 
-		//Control torch
-		if (torchEnabled && batteryPower > 0) {
-			torch.light.intensity = maxLightIntensity*(batteryPower/100);
-			batteryPower -= batteryDrain * Time.deltaTime;
-			if (wideLight != null) {
-				wideLight.light.intensity = Mathf.Max ((maxLightIntensity*(batteryPower/250))-0.5f,0);
-			}
-		}else{
-			torch.light.intensity = 0;
-			batteryPower += batteryDrain * 0.125f * Time.deltaTime;
-			if (wideLight != null) {
-				wideLight.light.intensity = 0;
+		if (Input.GetButtonDown ("Use")) {
+			if (Physics.Raycast(runnerCamera.transform.position,runnerCamera.transform.forward,useDistance)) {
+				Debug.Log("Hit something!");
 			}
 		}
 	}
